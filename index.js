@@ -62,8 +62,8 @@ Enter other family details like siblings or anything important except Father and
 Enter Academic Details: ${req.body.input1.stu_academicDetails}
 Mention the interests of the students: ${req.body.input1.stu_interests}
        ${req.body.input2}
-       ${req.body.input3 + (req.body.input1.stu_wordLimit || "3000" ) + "limit"} `;
-  //console.log(input)
+       ${req.body.input3 + req.body.input1.stu_wordLimit + "words"} `;
+  console.log(input)
   try {
     console.log(req.body);
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
