@@ -6,6 +6,7 @@ const app = express();
 
 var whitelist = [
   "https://www.propertyease.in",
+  "https://test.propertyease.in",
   "https://propertyease.in",
   "http://localhost:5174",
   "http://localhost:3000",
