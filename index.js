@@ -303,7 +303,7 @@ app.post("/generate-sop", async (req, res) => {
   sop += `Generate a response close to this format below, but with the details provided above and alter the content as necessary to match my details. If any required data is not provided, use relevant information from the internet stictly without including informative brackets or unnecessary lines. ${req.body.input2}\n`;
 
   sop += `You are the Statement of Purpose(SOP) writing expert, it must be unique & plagiarism-free, and easy to understand. You are a helpful Statement of purpose generator Consultant. It must not be copied from anywhere online.\n`;
-  sop += `Please write in simple English language. Generate a Statement of Purpose (SOP) of ${req.body.input1.stu_wordLimit} words; it must be exactly ${req.body.input1.stu_wordLimit} words. Add topic wise headings. Display sub points with differnent indentaion to make it readiable.\n`;
+  sop += `Please write in simple English language. Generate a Statement of Purpose (SOP) of ${req.body.input1.stu_wordLimit} words; it must be exactly ${req.body.input1.stu_wordLimit} words. Add topic wise headings. Display sub points with differnent indentaion to make it readiable. Also Include total word count at the end.\n`;
   sop += `Important: If any required data is not provided, use relevant information from the internet stictly without including informative brackets or unnecessary lines.`;
 
   //console.log(sop); // Log the SOP for debugging
