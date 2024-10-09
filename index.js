@@ -247,7 +247,9 @@ app.post("/generate-sop", async (req, res) => {
   check2(req.body.input1.stu_short_term_goals, "Short Term Goals");
   check2(
     req.body.input1.stu_long_term_goals,
-    `Long Term Goals (choose three options and explain and also change data, If any required data is not provided, use relevant information from the internet stictly without including informative brackets or unnecessary lines.) : 
+    `Long Term Goals (choose one options and explain and also change data, 
+    If any required data is not provided, use relevant information from the internet stictly without 
+    including informative brackets or unnecessary lines.) : 
      Obtain a leadership position in a top company in the field.
  Teach at the university level and inspire the next generation of professionals.
  Develop and implement innovative solutions to real-world problems in the field.
@@ -259,7 +261,9 @@ app.post("/generate-sop", async (req, res) => {
   );
   check2(
     req.body.input1.stu_why_this_uni,
-    `Why This University (choose three point and explain and also change data, If any required data is not provided, use relevant information from the internet stictly without including informative brackets or unnecessary lines.)  :  
+    `Why This University (choose one point and explain and also change data, 
+    If any required data is not provided, use relevant information from the internet stictly without including 
+    informative brackets or unnecessary lines.)  :  
     Expert faculty, alumni, and research facilities
  Excellent Curriculum
  Wide range of optional courses
@@ -274,12 +278,14 @@ app.post("/generate-sop", async (req, res) => {
   check2(req.body.input1.stu_prog_align_goals, "Program Alignment Goals");
   check2(req.body.input1.stu_growth_development, "Growth and Development");
 
-  check(
+  check2(
     req.body.input1.stu_extracurricular_involvement,
     "Extracurricular Involvement"
   );
+  check2(req.body.input1.stu_community_service, "Community Service");
+
+ 
   check(req.body.input1.stu_leadership_roles, "Leadership Roles");
-  check(req.body.input1.stu_community_service, "Community Service");
   check(req.body.input1.stu_hobbies, "Hobbies");
   check(req.body.input1.stu_personal_challenges, "Personal Challenges");
   check(req.body.input1.stu_learning_from_mistakes, "Learning from Mistakes");
@@ -294,10 +300,10 @@ app.post("/generate-sop", async (req, res) => {
 
   sop += `Declaration: ${req.body.input1.stu_declaration ? "Yes" : "No"}\n`;
   sop += `Consent: ${req.body.input1.stu_consent ? "Yes" : "No"}\n`;
-  sop += `${req.body.input2}\n`;
+  sop += `Generate a response close to this format below, but with the details provided above and alter the content as necessary to match my details. If any required data is not provided, use relevant information from the internet stictly without including informative brackets or unnecessary lines. ${req.body.input2}\n`;
 
-  sop += `You are the Statement of Purpose(SOP) writing expert, it must be unique & plagiarism-free, and easy to understand. It must not be copied from anywhere online.\n`;
-  sop += `Please write in simple English language. Generate a Statement of Purpose (SOP) of ${req.body.input1.stu_wordLimit} words; it must be exactly ${req.body.input1.stu_wordLimit} words.\n`;
+  sop += `You are the Statement of Purpose(SOP) writing expert, it must be unique & plagiarism-free, and easy to understand. You are a helpful Statement of purpose generator Consultant. It must not be copied from anywhere online.\n`;
+  sop += `Please write in simple English language. Generate a Statement of Purpose (SOP) of ${req.body.input1.stu_wordLimit} words; it must be exactly ${req.body.input1.stu_wordLimit} words. Add topic wise headings. Display sub points with differnent indentaion to make it readiable.\n`;
   sop += `Important: If any required data is not provided, use relevant information from the internet stictly without including informative brackets or unnecessary lines.`;
 
   //console.log(sop); // Log the SOP for debugging
